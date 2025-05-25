@@ -1,0 +1,63 @@
+Task1:
+
+python dqn_task1.py \
+  --save-dir ../task1_result \
+  --wandb-project DLP-Lab5-DQN-task1 \
+  --wandb-run-name Cartpole \
+  --episodes 1000 \
+  --batch-size 32 \
+  --memory-size 20000 \
+  --lr 5e-5 \
+  --discount-factor 0.99 \
+  --epsilon-start 1.0 \
+  --epsilon-decay 0.995 \
+  --epsilon-min 0.01 \
+  --target-update-frequency 500 \
+  --replay-start-size 2000 \
+  --max-episode-steps 5000 \
+  --train-per-step 4
+
+python test_model_task1.py  --model-path ../LAB5_113522118_task1_cartpole.pt --output-dir ./eval_videos_task1 --episodes 100  --seed 113522118
+
+Task2:
+
+python dqn_task2.py --save-dir ../task2_result \
+--wandb-project DLP-Lab5-DQN-task2 \
+--wandb-run-name Pong-v5 \
+--episodes 10000 \
+--batch-size 32 \
+--memory-size 100000 \
+--lr 5e-5 \
+--discount-factor 0.99 \
+--epsilon-start 1.0 \
+--epsilon-decay 0.99999 \
+--epsilon-min 0.05 \
+--target-update-frequency 2000 \
+--replay-start-size 50000 \
+--max-episode-steps 10000 \
+--train-per-step 2
+
+python test_model_task2.py  --model-path ../LAB5_113522118_task2_pong.pt --output-dir ./eval_videos_task2 --episodes 100  --seed 113522118
+
+Task3:
+
+python dqn_task3.py --save-dir ../task3_result \
+--wandb-project DLP-Lab5-DQN-task3 \
+--wandb-run-name Pong-v5-DDQN \
+--episodes 3000 \
+--batch-size 64 \
+--memory-size 500000 \
+--lr 1e-4 \
+--discount-factor 0.99 \
+--epsilon-start 1.0 \
+--epsilon-decay 0.999993 \
+--epsilon-min 0.02 \
+--target-update-frequency 5000 \
+--replay-start-size 1000000 \
+--max-episode-steps 10000 \
+--train-per-step 2 \
+--n_steps 5 \
+--step_lr_step_size 20000 \
+--step_lr_gamma 0.9
+
+python test_model_task3.py --model-path C:\Users\Peko\Desktop\DL_LAB5_113522118_韓志鴻\Lab5_113522118_task3_pong1400000.pt --output-dir ./eval_videos_task3 --episodes 100  --seed 113522118
